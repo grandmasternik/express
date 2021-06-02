@@ -38,7 +38,7 @@ let responses =["It is certain",
 "Outlook not so good", 
 "Very doubtful"];
 
-let random=Math.flow(Math.random() * response.length);
+let random=Math.floor(Math.random() * response.length);
 app.get(`/magic/:question`, (req, res)=>{
     res.send(<h1>${responses[random]}</h1>)
 });
