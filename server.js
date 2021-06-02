@@ -11,10 +11,9 @@ app.get(`/greeting/:name`, (req, res) => {
 });
 
 // ##tip route
-app.get(`/tip`, (req, res)=>{
-    res.send(req.params.tipPercentage)
+app.get(`/tip/:total/:tipPercentage`, (req, res)=>{
+    res.send("Your tip is" + `${req.params.tipPercentage/100}*${req.params.total}`);
 });
-
 
 // listener
 app.listen(port, () => {
