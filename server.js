@@ -37,12 +37,11 @@ let responses =["It is certain",
 "My sources say no",
 "Outlook not so good", 
 "Very doubtful"];
-let random=Math.flow(Math.random() * response.length)
-app.get(`/magic/:question`, (req, res)=>{
-    res.send(
 
-    )
-})
+let random=Math.flow(Math.random() * response.length);
+app.get(`/magic/:question`, (req, res)=>{
+    res.send(<h1>${responses[random]}</h1>)
+});
 
 // listener
 app.listen(port, () => {
